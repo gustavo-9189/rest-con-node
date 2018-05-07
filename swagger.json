@@ -1,0 +1,99 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "version": "1.0.0",
+        "title": "API REST de prueba con NodeJS...",
+        "description": "Proyecto de API REST de prueba con NodeJS, Mongo y Swagger."
+    },
+    "schemes": [
+        "http",
+        "https"
+    ],
+    "host": "localhost:8080",
+    "basePath": "",
+    "paths": {
+        "/cliente": {
+            "get": {
+                "tags": [
+                    "cliente.controller"
+                ],
+                "summary": "Retorna una lista con todos los clientes.",
+                "responses": {
+                    "200": {
+                        "description": "Una lista de clientes",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "properties": {
+                                    "nombre": {
+                                        "type": "string"
+                                    },
+                                    "apellido": {
+                                        "type": "string"
+                                    },
+                                    "dni": {
+                                        "type": "number"
+                                    },
+                                    "telefono": {
+                                        "type": "string"
+                                    },
+                                    "email": {
+                                        "type": "string"
+                                    },
+                                    "direccion": {
+                                        "type": "string"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/cliente/{id}": {
+            "get": {
+                "tags": [
+                    "cliente.controller"
+                ],
+                "summary": "Retorna un objeto JSON de un cliente en particular.",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID del cliente a retornar.",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Un objeto JSON cliente",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "nombre": {
+                                    "type": "string"
+                                },
+                                "apellido": {
+                                    "type": "string"
+                                },
+                                "dni": {
+                                    "type": "number"
+                                },
+                                "telefono": {
+                                    "type": "string"
+                                },
+                                "email": {
+                                    "type": "string"
+                                },
+                                "direccion": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
